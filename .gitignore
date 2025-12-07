@@ -1,0 +1,7 @@
+node_modules/
+response/
+.DS_Store
+.env
+*.json
+!package.json
+!package-lock.json

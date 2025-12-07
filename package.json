@@ -1,0 +1,23 @@
+{
+  "name": "text_2_google-assistant",
+  "version": "1.0.0",
+  "description": "A Node.js application to interact with Google Assitant through the terminal using text based commands.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Jake Gregory",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jake-gregory/text_2_google-assistant.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.2",
+    "@grpc/proto-loader": "^0.8.0",
+    "googleapis": "^167.0.0"
+  }
+}
