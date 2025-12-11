@@ -44,8 +44,6 @@ const assistant = new proto.EmbeddedAssistant(ENDPOINT, combinedCreds);
 // Array to save audio buffer if response is enabled
 const audioChunks = []
 
-const call = assistant.assist();
-
 // Convert OAuth client to gRPC metadata
 function oauthToCallCredentials() {
     return grpc.credentials.createFromMetadataGenerator(async (_, callback) => {
@@ -59,7 +57,11 @@ function oauthToCallCredentials() {
     });
 }
 
-export function grpcAssistant(command, respond) {
+export function grpcAssistant(command, locale, respond) {
+
+    // Create assistant
+    const call = assistant.assist();
+
     // Send a single text query to assistant
     call.write({
         config: {
@@ -73,7 +75,7 @@ export function grpcAssistant(command, respond) {
                 device_model_id: "my-model"
             },
             dialog_state_in: {
-                language_code: "en-GB"
+                language_code: locale
             },
             text_query: command
         }

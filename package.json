@@ -1,13 +1,21 @@
 {
   "name": "text_2_google-assistant",
   "version": "1.0.0",
-  "description": "A Node.js application to interact with Google Assitant through the terminal using text based commands.",
+  "description": "A Node.js application that communicates with Google Assistant via gRPC, enabling text-based command interaction directly from the terminal",
   "main": "index.js",
   "private": true,
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "text_2_google-assistant": "./index.js"
+  },
+  "files": [
+    "*.json",
+    "components",
+    "protos"
+  ],
   "type": "module",
   "author": "Jake Gregory",
   "repository": {

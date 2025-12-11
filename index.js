@@ -1,7 +1,12 @@
+#!/usr/bin/env node
+
 import { grpcAssistant } from "./components/grpc.js";
 
 // Enable or disable audio responses
 const RESPOND = false
+
+// Set assistant language
+const LANG = 'en-GB'
 
 // Get assistant command from cli args
 const args = process.argv.slice(2);
@@ -9,7 +14,7 @@ const args = process.argv.slice(2);
 const helpText = "\nPlease specify a command. For example: node index.js --command=YOUR_COMMAND_HERE\n"
 
 
-if (args) {
+if (args.length > 0) {
     // Avoid command formatting errors in command
     const joinedArgs = args.join().replace(/,/g, ' ')
 
@@ -18,7 +23,7 @@ if (args) {
         const assistantCommand = joinedArgs.split('=')[1];
 
         // Send command to assistant using gRPC and capture returned response
-        grpcAssistant(assistantCommand, RESPOND)
+        grpcAssistant(assistantCommand, LANG, RESPOND)
 
     } else {
         // End if no --command is found

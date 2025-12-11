@@ -49,7 +49,7 @@ async function accessToken(oAuth2Client) {
 
 export async function authenticate() {
     // Find credentials with client_secret in file name (passing in root directory)
-    const CREDENTIALS_PATH = getCredentials(path.join(__dirname, '..'));
+    const CREDENTIALS_PATH = getCredentials(path.join(__dirname, '../'));
 
     // Ensure credentials exist
     if (!CREDENTIALS_PATH || !fs.existsSync(CREDENTIALS_PATH)) {
