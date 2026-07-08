@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js Version](https://img.shields.io/badge/Node.js-18.x-green.svg)](https://nodejs.org/)
 
-A Node.js application that communicates with Google Assistant via gRPC, enabling text-based command interaction directly from the terminal.
+A Node.js script that communicates with Google Assistant via gRPC, enabling text-based command interaction directly from the terminal.
 
 ---
 
